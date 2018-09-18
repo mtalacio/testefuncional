@@ -7,6 +7,11 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		/* Para usar, coloque os dados em um txt chamado "entrada.txt" no root deste projeto com a seguinte formatação:
+		 *  [nome],[email],[cargo(int)], [salarioBase(double)]
+		 */
+		
 		try {
 			FileReader in = new FileReader("entrada.txt");
 			BufferedReader reader = new BufferedReader(in);
