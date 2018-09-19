@@ -22,30 +22,29 @@ public class Validacao {
 	}
 	
 	public static boolean ValidarEmail(String email) throws Exception {
+            if(email == null)
+		throw new Exception("E-mail nulo!");
 		
-		if(email == null)
-			throw new Exception("E-mail nulo!");
-		
-		String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-        Pattern p = Pattern.compile(ePattern);
-        Matcher m = p.matcher(email);
-        if(!m.matches())
-        	throw new Exception("E-mail Inválido!");
+            String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+            Pattern p = Pattern.compile(ePattern);
+            Matcher m = p.matcher(email);
+            if(!m.matches())
+        	throw new Exception("E-mail Invalido!");
         
-        return true;
+            return true;
 	}
 	
 	public static Cargo ValidarCargo(int cargo) throws Exception {	
 		try {
 			return Cargo.values()[cargo];
 		} catch (ArrayIndexOutOfBoundsException e) {
-			throw new Exception("Cargo Inválido!");
+			throw new Exception("Cargo Invalido!");
 		}
 	}
 	
 	public static boolean ValidarSalario(double salario) throws Exception {
 		if(salario <= 0)
-			throw new Exception("Salário Inválido");
+			throw new Exception("Salario Invalido");
 		
 		return true;
 	}
