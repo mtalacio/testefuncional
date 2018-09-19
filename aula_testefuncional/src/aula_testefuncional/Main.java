@@ -8,12 +8,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		/* Para usar, coloque os dados em um txt chamado "entrada.txt" no root deste projeto com a seguinte formatação:
+		/* Para usar, coloque os dados em um txt chamado "entrada.txt" no root deste projeto com a seguinte formatacao:
 		 *  [nome],[email],[cargo(int)], [salarioBase(double)]
 		 */
 		
 		try {
-			FileReader in = new FileReader("entrada.txt");
+			FileReader in = new FileReader("teste.txt");
 			BufferedReader reader = new BufferedReader(in);
 			
 			String line;
@@ -29,8 +29,6 @@ public class Main {
 							results[3].trim().equals("null") ? null : Double.parseDouble(results[3].trim())
 							);
 					CalculadoraSalario.Calcular(f);
-				} catch (NumberFormatException e) {
-					e.printStackTrace();
 				} catch (NullPointerException e) {
 					System.out.println("Entrada Nula para campo proibido");
 				} catch (Exception e) {
